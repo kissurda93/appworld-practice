@@ -1,0 +1,95 @@
+/* -------------------------
+    Általános szabályok
+--------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --yellow: rgb(244, 224, 3);
+    --darkgrey: rgb(51, 59, 57);
+    --white: rgb(226, 226, 226);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100%;
+    max-width: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+* a{
+    text-decoration: none;
+}
+
+* li{
+    list-style-type: none;
+}
+
+
+/* -------------------------
+    Fejlécek
+--------------------------*/
+.first-header{
+    min-height: 2rem;
+    padding: 0 11rem 0 11rem;
+    color: grey;
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first-header ul, .second-header ul{
+    display: flex;
+    gap: 2rem;
+}
+
+.first-header a{
+    color: grey;
+}
+
+.first-header select{
+    border: none;
+    color: grey;
+}
+
+.first-header select:focus{
+    outline: none;
+}
+
+.second-header{
+    min-height: 5rem;
+    padding: 0 11rem 0 11rem;
+    color: var(--darkgrey);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.second-header ul{
+    padding-right: 8rem;
+}
+
+.second-header a{
+    color: var(--darkgrey);
+}
+
+h1{
+    font-size: 2rem;
+}
+
+.second-header span{
+    color: grey;
+    font-weight: 400;
+}
+
+
+
