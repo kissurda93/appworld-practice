@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+
+    /*1 Készítsen egy dokumentumot a következők szerint:
+    globális szövegszín: piros*/
+    /* valósítsa mindezt úgy, hogy a színt nevesítve, hexadecimális, és rgb színekkel is megadja! */
+    color: red;
+    color: rgb(255, 0, 0);
+    color: #ff0000;
+}
+
+
+/*2 Készítsen egy legalább 3 féle HTML taget tartalmazó dokumentumot az alábbiak szerint:
+legyen különböző az elemek betűszíne*/
+/* valósítsa mindezt úgy, hogy nevesített, hexadecimális, és rgb színeket is használ! */
+/*3 Készítsen egy dokumentumot amely 4 elemet, bennük tartalom kitöltő szövegrészletet tartalmaz, az alábbiak szerint:
+igazítsa az utolsó sorukat balra, jobbra, középre és sorkizártra*/
+p:nth-child(1){
+    color: brown;
+    text-align-last: right;
+}
+
+p:nth-child(2){
+    color: #8a2be2;
+    text-align-last: center;
+}
+
+p:nth-child(3){
+    color: rgb(0, 0, 255);
+    text-align-last: justify;
+}
+
+/*4 Készítsen egy dokumentumot amely egy lorem ipsum szövegrészletet tartalmaz a következők szerint:
+fordítsa meg a szöveg irányzékát
+ */
+p:nth-child(5){
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+/*5 Készítsen egy szöveget a következő jellemzőkkel:
+legyen föléhúzva*/
+h2:nth-child(6){
+    text-decoration: overline;
+}
+
+/*6 Készítsen egy szöveget az alábbiak szerint:
+legyen áthúzva*/
+h2:nth-child(7){
+    text-decoration: line-through;
+}
+
+/*7 Készítsen egy szöveget az alábbiak szerint:
+legyen alá - fölé - áthúzva*/
+h2:nth-child(8){
+    text-decoration: underline overline line-through;
+}
+
+
+/*8 Készítsen egy szöveget a következők szerint:
+legyen aláhúzva és a dekorációs vonal színe legyen piros*/
+h2:nth-child(9){
+    color: black;
+    text-decoration: underline rgb(255, 0, 0);
+}
+
+/*9 Készítsen egy szöveget a következők szerint:
+legyen benne alkalmazva a line-height property olyan módon, hogy a sorok egymásba érjenek*/
+p:nth-child(10){
+    line-height: .5;
+}
+
+/*10 Készítsen egy példa megjelenést a következő jellemzőkkel:
+legyen benne alkalmazva a word-spacing property olyan módon, hogy a szavak egymásba érjenek*/
+p:nth-child(11){
+    word-spacing: -7px;
+}
+
+/*11 Készítsen egy  példa megjelenést a következők szerint:
+legyen benne alkalmazva a white-space property olyan módon, hogy a sorok megtörjenek*/
+p:nth-child(12){
+    white-space: wrap;
+}
+
+/*12 Készítsen egy  példa szöveget  az alábbiak szerint:
+legyen rajta 3 árnyékolási hatás*/
+h1{
+    text-shadow: 1px 1px 2px rgb(52, 1, 1), 0 0 10px rgb(246, 6, 250), 0 0 30px rgb(255, 208, 0);
+}
+
+

@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+.first{
+    background: red;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.second{
+    background: blue;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.third{
+    background: green;
+    height: 25%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+.fourth{
+    background: yellow;
+    height: 12.5%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 4;
+}

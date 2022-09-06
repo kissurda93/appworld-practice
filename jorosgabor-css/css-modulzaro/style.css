@@ -1,0 +1,147 @@
+/*---------------------
+    Általános szabályok
+-----------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    min-height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+/*---------------------
+    Fejléc
+-----------------------*/
+header{
+    background-color: black;
+    color: white;
+    padding: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+form{
+    background: rgb(68, 67, 67);
+    padding: .5rem;
+    margin-right: 9rem;
+    border-bottom: 2px solid rgb(193, 192, 192);
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 30rem;
+}
+
+input{
+    background: rgb(68, 67, 67);
+    color: whitesmoke;
+    border: none;
+    flex-basis: 100%;
+}
+
+input:focus{
+    outline: none;
+}
+
+form button{
+    background: rgb(68, 67, 67);
+    border: none;
+    color: rgb(204, 204, 204);
+}
+
+form i{
+    font-size: 1.2rem;
+}
+
+header figure i{
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+
+/*---------------------
+    Navigációs sáv
+-----------------------*/
+main{
+    display: flex;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+}
+
+nav i{
+    font-size: 1.3rem;
+    margin: 1rem 1rem 0 1rem;
+    cursor: pointer;
+}
+
+
+/*---------------------
+    Main
+-----------------------*/
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article{
+    flex-basis: 30%;
+    margin: 1rem;
+    background: rgb(233, 233, 233);
+    padding: 1rem;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+p{
+    padding: 0 1.5rem 1rem 0;
+}
+
+article button{
+    padding: .8rem;
+    background: rgb(208, 207, 207);
+    border: 1px solid blue;
+    color: blue;
+}
+
+article button i{
+    font-size: 1.2rem;
+    padding-left: 2.7rem;
+}
+
+.dark{
+    background: black;
+    color: whitesmoke;
+    flex-basis: 62%;
+}
+
+.dark button{
+    background: blue;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.dark h2{
+    padding-top: 1rem;
+}

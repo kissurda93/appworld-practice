@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+/*3 Készítsen egy tetszőleges dokumentumot, benne div(ekk)el, amely(ek)en állítsa be a következőket: */
+div{
+    border: 1px solid blue;   /*Shorthand segítségével 1px egyszerű kék keret*/
+    border-color: green;     /*Új szabályban írjuk felül a border színét zöldre*/
+    border-width: 10px;        /*Új szabályban írjuk felül a border vastagságát 10px re*/
+    border-style: ridge;       /*Új szabályban írjuk felül a border stílusát tetszőleges 3D-re*/
+    padding: 1em;
+}
+
+div:nth-child(2){
+    margin-bottom: 50px;
+}
+
+div:nth-child(3){
+    margin-top: 100px;
+}
+
+/*5 Igazítson egy div-et marginek segítségével középre */
+div:nth-child(4){
+    max-width: 400px;
+    margin: auto;
+}

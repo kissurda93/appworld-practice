@@ -1,0 +1,16 @@
+/*6 Készítsen egy div-et, amelynek 30px-es padding-e, és 300px definiált szélessége van. */
+div{
+    /*A jobb láthatóságért és a 7.-ik feladat illusztrálásáért megadtam pár plusz szabályt*/
+    background: lightcoral;
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    margin: 50px auto;
+    border: 2px solid red;
+    /* Hogyan változott meg a div mérete a padding hatására? */
+    /* A padding hatására a div mérete mindegy irányba megnövekedett 30px-el, így hát a szélessége és magassága 360px pixel */
+
+
+    /* Adjunk egy új szabályt a div -hez, amitől az újra 300px széles lesz. */
+    box-sizing: border-box;
+}

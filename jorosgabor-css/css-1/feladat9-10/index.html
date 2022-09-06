@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /*9 Állítsd piros betűszínűre azokat <p> elemeket, akik első gyermek elemei bármely más elemnek. */
+        p:first-child{
+            color: red;
+        }
+
+        /*10 Állítd be piros háttérszínt azoknak az <input> elemeknek, amelyekbe belekerül a kurzor. */
+        input:focus{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+
+    <form>
+        Name:
+        <input type="text" name="fname">
+        Age:
+        <input type="text" name="age">
+    </form>
+      
+    
+</body>
+</html>

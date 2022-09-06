@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    margin: 50px;   /*Módosítsuk a div-eket úgy, hogy egymástól 50 px távolságra legyenek.*/
+
+    /* Módosítsuk úgy az outline-okat, hogy azok a két div közötti távolság megtartása mellett egymásba érjenek! */
+    outline-offset: 30px;
+}
+
+div:nth-child(1){
+    background: lightcoral;
+    outline: 5px solid red;  /*Készítsünk egy 200px × 200px méretű div-et, adjunk neki 5px solid red outline-t!*/
+}
+
+div:nth-child(2){
+    background: lightgreen;
+    outline: 5px solid green;  /*Készítsünk egy 200px × 200px méretű div-et, adjunk neki 5px solid green outline-t!*/
+}
+
+/* Fogalmazzuk meg, mi a fő különbség a border és az outline között! */
+/* Míg a border a box-modelben helyet követel magának addig az outline a dimenziók felett létezik.
+Így az outline nem befolyásolja saját szülőelemének és más elemeknek sem az elhelyezkedésést */

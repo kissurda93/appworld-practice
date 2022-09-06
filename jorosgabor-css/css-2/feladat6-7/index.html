@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div></div>
+
+    <!--7 Készítsen egy rövid bemutató leírást kóddal prezentálva a box modelről! -->
+    <p>A box-model lényegében egy doboz ami minden html elemet körül ölel. Ez a doboz a tényleges tartalomból, paddingből, borderből, és marginből állhat. A fent látható elem is egy ilyen doboz, aminek tényleges tartalma nincs, helyette megadtam a méreteit:
+        <pre>
+            <code>
+                div{
+                    background: lightcoral;
+                    height: 300px;
+                    width: 300px;
+                    padding: 30px;
+                    margin: 50px auto;
+                    border: 2px solid red;
+                    box-sizing: border-box;
+                }
+            </code>
+        </pre>
+    A <code>box-sizing: border-box;</code> miatt a belső tér a padding és a border eggyüttese teszi ki a 300px-t!
+    A <code>margin: 50px auto;</code> miatt azonban a teljes box-modellunk magassága 400px ((2 * 50px) + 300px), szélessége pedig megegyezik a teljes oldal szélességgel (<code>auto</code>)
+    </p>
+    
+</body>
+</html>

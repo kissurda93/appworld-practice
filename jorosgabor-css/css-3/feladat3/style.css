@@ -1,0 +1,113 @@
+                            /* ///////////////////
+                            Általános szabályok
+                            /////////////////////*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --darkgreen: rgb(0,102,102);
+    --lightgreen: rgb(157,188,188);
+    --yellow: rgb(255,245,187);
+    --grey: rgb(83, 81, 81);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* > li{
+    list-style-type: none;
+}
+
+* > a{
+    text-decoration: none;
+}
+
+html, body{
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+                            /* ///////////////////
+                                Fejléc-oldalsáv
+                            /////////////////////*/
+header{
+    background: var(--darkgreen);
+    padding: 2em;
+    position: fixed;
+    min-height: 100%;
+    left: 0;
+    top: 0;
+    color: var(--yellow);
+}
+
+header i{
+    font-size: 8em;
+    color: var(--yellow);
+    margin: 0 auto 2rem auto;
+}
+
+h1{
+    margin-bottom: 2rem;
+}
+
+nav a{
+    color: var(--yellow);
+    display: block;
+    padding: 1rem;
+}
+
+nav a:hover{
+    background: var(--lightgreen);
+    color: var(--darkgreen);
+}
+
+                            /* ///////////////////
+                                Main
+                            /////////////////////*/
+main{
+    background: var(--lightgreen) fixed;
+    min-height: 100%;
+    padding: 2em;
+    padding-left: 17em;
+    color: var(--grey);
+}
+
+main section{
+    padding: 10.5rem 0 2rem 2rem;
+}
+
+article{
+    min-height: 15%;
+    max-width: 60%;
+    margin: 1rem;
+}
+
+article i{
+    font-size: 5em;
+    float: right;
+}
+
+h3{
+    margin: 0 0 .4rem .5rem;
+}
+
+main ul{
+    margin: 1rem 0 0 3rem;
+}
+
+#célok li{
+    list-style-type: circle;
+}
+
+#referencia li{
+    margin: .3rem;
+}
+
+#contact i{
+    font-size: 3rem;
+    margin: 1rem;
+}

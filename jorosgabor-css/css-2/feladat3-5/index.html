@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--4 Készítsen egy rövid bemutató leírást kóddal prezentálva a margin collapse-ról! -->
+    <div>
+        <h2>4 Készítsen egy rövid bemutató leírást kóddal prezentálva a margin collapse-ról!</h2>
+        <p>A margin collapse a blokk szintű elemek az a tulajdonsága amikor függőleges margói (margin-top, margin-bottom) összeolvadnak. Ilyenkor a nagyobb margó érték lesz a számottevő és az kerül megjelenítésre. A margin collapse lehet egy számunkra kívánatos esemény vagy egy zavaró tényező is, szituációtol függően.</p>
+        <p> A margin collapse csak akkor következik be, ha az elemeknek vannak dimenziói vagy van tartalma, és ha az elemek margói között nincs semmi, tehát a margók közvetlenül összeérnek. Ha az elemek közé elhelyezünk például egy <code>< br ></code> taget, akkor a margin collapse nem valósul meg!</p>
+        <br>
+        <p>Ebben a leírásban látható paragrafusok pont ilyen blokk szintű elemek. Az első két paragrafus margói összeolvadnak, míg a második és harmadik paragrafusé nem, mert egy <code>< br ></code> taget helyeztem el közöttük!</p>
+        <p>Továbba a második és harmadik kerettel ellátott elemekre margót állítottam be:
+
+            <pre>
+                <code>
+                    div:nth-child(2){
+                        margin-bottom: 50px;
+                    }
+                
+                    div:nth-child(3){
+                        margin-top: 100px;
+                    }
+                </code>
+            </pre>
+
+            Mivel a <code>< div ></code>-ek margói közvetlenül érintkeznek ezért csak a 100px érték kerül megjelnítésre!
+        </p>
+    </div>
+
+    <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, repudiandae, ratione dolore iusto rem doloremque recusandae laudantium deleniti veniam cumque natus aut blanditiis id dignissimos culpa quidem ea ducimus minus perspiciatis rerum maiores nam sequi. Dolores error recusandae dolor atque ab fugit possimus, eos corporis sed maiores nesciunt ratione magni.
+    </div>
+
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis laborum non eius placeat temporibus distinctio. Voluptate pariatur, exercitationem illo id a nisi! Laborum tempora repudiandae ut expedita! Quod, voluptate neque esse architecto eius dolore enim soluta? Odit illo nemo facilis qui, eaque nostrum. Dignissimos voluptatibus ratione quisquam ullam eligendi quam?
+    </div>
+
+    <div>
+        <h2>5 Igazítson egy div-et marginek segítségével középre</h2>
+    </div>
+    
+</body>
+</html>
