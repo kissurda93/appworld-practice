@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root{
-    --yellow: rgb(244, 224, 3);
+    --yellow: rgb(232, 213, 5);
     --darkgrey: rgb(51, 59, 57);
-    --white: rgb(226, 226, 226);
+    --grey: grey;
 }
 
 *{
@@ -20,8 +20,6 @@ body{
     min-height: 100%;
     max-width: 100%;
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-flow: column wrap;
 }
 
 * a{
@@ -32,50 +30,51 @@ body{
     list-style-type: none;
 }
 
+* i{
+    cursor: pointer;
+}
+
 
 /* -------------------------
     Fejlécek
 --------------------------*/
-.first-header{
+.first-header, .second-header, .third-header{
     min-height: 2rem;
     padding: 0 11rem 0 11rem;
-    color: grey;
+    color: var(--grey);
     font-size: small;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.first-header ul, .second-header ul{
+.first-header ul, .second-header ul, .third-header ul{
     display: flex;
     gap: 2rem;
 }
 
 .first-header a{
-    color: grey;
+    color: var(--grey);
 }
 
 .first-header select{
     border: none;
-    color: grey;
+    color: var(--grey);
 }
 
 .first-header select:focus{
     outline: none;
 }
 
+
 .second-header{
     min-height: 5rem;
-    padding: 0 11rem 0 11rem;
     color: var(--darkgrey);
     font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .second-header ul{
-    padding-right: 8rem;
+    padding-right: 15rem;
 }
 
 .second-header a{
@@ -92,4 +91,104 @@ h1{
 }
 
 
+.third-header{
+    min-height: 3rem;
+    background: var(--yellow);
+    color: var(--darkgrey);
+    font-weight: 600;
+}
+
+.third-header ul{
+    gap: 1rem;
+}
+
+form{
+    background: var(--darkgrey);
+    color: var(--grey);
+    min-height: 2.5rem;
+    flex-basis: 42rem;
+    flex-shrink: 3;
+    display: flex;
+    align-items: center;
+}
+
+form button{
+    background: var(--darkgrey);
+    border: none;
+}
+
+form i{
+    color: rgb(196, 194, 194);
+    font-size: 1.2rem;
+    padding: 0 .7rem 0 .7rem;
+}
+
+input{
+    flex-basis: 80%;
+}
+
+input, form select{
+    min-height: 2.5rem;
+    border: none;
+    color: var(--grey);
+    padding: 0 1rem 0 1rem;
+}
+
+form select:focus, input{
+    outline: none;
+}
+
+
+/* -------------------------
+    Leugró menü
+--------------------------*/
+.third-header p{
+    padding: .7rem 0 .7rem 0;
+}
+.dropmenu{
+    position: relative;
+    flex-shrink: 0;
+    flex-basis: 13rem;
+    min-height: 2.5rem;
+}
+
+.dropmenu ul{
+    border: 3px solid var(--yellow);
+    display: none;
+}
+
+.dropmenu ul li, .submenu li{
+    padding: .5rem .5rem .5rem .5rem;
+    cursor: pointer;
+}
+
+.dropmenu a{
+    color: var(--darkgrey);
+    font-weight: 600;
+}
+
+.dropmenu i{
+    float: right;
+}
+
+.submenu-acces{
+    color: var(--grey);
+    font-weight: 400;
+    position: relative;
+}
+
+.submenu{
+    display: none;
+    left: 187px;
+    top: -1px;
+    margin-left: 1rem;
+}
+
+.dropmenu:hover > ul, .submenu-acces:hover > .submenu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 13rem;
+}
 
