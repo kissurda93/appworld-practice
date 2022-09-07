@@ -8,6 +8,7 @@
     --yellow: rgb(232, 213, 5);
     --darkgrey: rgb(51, 59, 57);
     --grey: grey;
+    --padd: 0 3rem 0 3rem;
 }
 
 *{
@@ -40,7 +41,7 @@ body{
 --------------------------*/
 .first-header, .second-header, .third-header{
     min-height: 2rem;
-    padding: 0 11rem 0 11rem;
+    padding: var(--padd);
     color: var(--grey);
     font-size: small;
     display: flex;
@@ -74,7 +75,7 @@ body{
 }
 
 .second-header ul{
-    padding-right: 15rem;
+    padding-right: 20rem;
 }
 
 .second-header a{
@@ -110,6 +111,7 @@ form{
     flex-shrink: 3;
     display: flex;
     align-items: center;
+    margin-right: 12rem;
 }
 
 form button{
@@ -143,7 +145,7 @@ form select:focus, input{
     Leugró menü
 --------------------------*/
 .third-header p{
-    padding: .7rem 0 .7rem 0;
+    padding: .7rem 4rem 1rem 0;
 }
 .dropmenu{
     position: relative;
@@ -154,6 +156,7 @@ form select:focus, input{
 
 .dropmenu ul{
     border: 3px solid var(--yellow);
+    background: white;
     display: none;
 }
 
@@ -179,7 +182,7 @@ form select:focus, input{
 
 .submenu{
     display: none;
-    left: 187px;
+    left: 248.5px;
     top: -1px;
     margin-left: 1rem;
 }
@@ -189,6 +192,84 @@ form select:focus, input{
     display: flex;
     flex-direction: column;
     gap: 0;
-    width: 13rem;
+    width: 270px;
 }
 
+
+/* -------------------------
+    Főoldal - Main
+--------------------------*/
+.bgi-container{
+    min-height: 386px;
+    display: flex;
+    justify-content: space-between;
+    background: url(/img/1920X422/img1.jpg) no-repeat;
+    background-size: cover;
+}
+
+.bgi-text{
+    padding: 2rem 2rem 2rem 22.5rem;
+}
+
+.bgi-text p{
+    padding-top: 3rem;
+    color: rgb(57, 155, 177);
+    font-weight: 600;
+}
+
+.bgi-text h2{
+    font-size: 2rem;
+    font-weight: lighter;
+    padding: .5rem 0 2rem 0;
+}
+
+.bgi-text span{
+    font-weight: bold;
+}
+
+.bgi-text button{
+    padding: .5rem 2rem .5rem 2rem;
+    border: none;
+    background: var(--yellow);
+    color: var(--darkgrey);
+}
+
+.bgi-container img{
+    padding-right: 4rem;
+}
+
+
+
+.items{
+    display: flex;
+    padding: 3rem 4rem 3rem 22rem;
+}
+
+.item{
+    display: flex;
+}
+
+.item-text{
+    padding: .5rem;
+}
+
+.item-text span{
+    font-weight: bold;
+}
+
+.item-text button{
+    margin-top: 3.5rem;
+    padding: .5rem;
+    background: white;
+    border: none;
+}
+
+.item-text a{
+    color: var(--darkgrey);
+    font-weight: bold;
+}
+
+.item-text i{
+    padding-left: .2rem;
+    color: var(--yellow);
+}
