@@ -8,6 +8,7 @@
     --yellow: rgb(232, 213, 5);
     --darkgrey: rgb(51, 59, 57);
     --grey: grey;
+    --blue: rgb(57, 155, 177);
     --padd: 0 3rem 0 3rem;
 }
 
@@ -32,6 +33,11 @@ body{
 }
 
 * i{
+    cursor: pointer;
+}
+
+select{
+    background: white;
     cursor: pointer;
 }
 
@@ -213,7 +219,7 @@ form select:focus, input{
 
 .bgi-text p{
     padding-top: 3rem;
-    color: rgb(57, 155, 177);
+    color: var(--blue);
     font-weight: 600;
 }
 
@@ -232,6 +238,9 @@ form select:focus, input{
     border: none;
     background: var(--yellow);
     color: var(--darkgrey);
+    cursor: pointer;
+    color: var(--darkgrey);
+    font-size: 1rem;
 }
 
 .bgi-container img{
@@ -240,36 +249,94 @@ form select:focus, input{
 
 
 
-.items{
+.items-narrow{
     display: flex;
     padding: 3rem 4rem 3rem 22rem;
+    flex-grow: 1;
 }
 
-.item{
+.item-horizontal{
     display: flex;
 }
 
-.item-text{
+.itemhorizontal-text{
     padding: .5rem;
 }
 
-.item-text span{
+.itemhorizontal-text span{
     font-weight: bold;
 }
 
-.item-text button{
+.itemhorizontal-text button{
     margin-top: 3.5rem;
     padding: .5rem;
     background: white;
     border: none;
 }
 
-.item-text a{
+.itemhorizontal-text a{
     color: var(--darkgrey);
     font-weight: bold;
 }
 
-.item-text i{
+.itemhorizontal-text i{
     padding-left: .2rem;
     color: var(--yellow);
+}
+
+
+
+.coldouble-container{
+    display: flex;
+    padding: var(--padd);
+}
+
+.itemshead-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.items-title{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0 2rem 0;
+}
+
+.items-title p:nth-child(1){
+    font-weight: bold;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: .5rem;
+}
+
+.items{
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.item-vertical p:nth-child(1){
+    color: grey;
+    font-size: small;
+    padding-bottom: .5rem;
+}
+
+.item-vertical p:nth-child(2){
+    color: var(--blue);
+    font-weight: bold;
+    padding-bottom: .8rem;
+}
+
+.item-vertical p:nth-child(4){
+    padding-top: .4rem;
+}
+
+.item-vertical button{
+    padding: .5rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: white;
+    border: none;
+    float: right;
 }
