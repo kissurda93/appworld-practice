@@ -20,7 +20,8 @@
 
 body{
     min-height: 100%;
-    max-width: 100%;
+    max-width: 1900px;
+    margin: 0 auto 0 auto;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -307,16 +308,21 @@ form select:focus, input{
 
 .items-title{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1rem;
-    padding: 2rem 0 1rem 0;
+    padding: 2rem 0 1rem 1rem;
+}
+
+.right-side .column-container:nth-child(1) .items-title{
+    justify-content: center;
 }
 
 .column-container:nth-child(1) .items-title p:nth-child(2){
     padding: 0;
 }
 
-.items-title p:nth-child(1){
+.items-title p:nth-child(1),
+.items-title h3{
     font-weight: bold;
     border-bottom: 2px solid var(--yellow);
     padding-bottom: .5rem;
@@ -362,7 +368,7 @@ form select:focus, input{
     padding: 2.5rem 0 0 1rem;
 }
 
-.borderitems-container p{
+.borderitems-container h3{
     flex-basis: 100%;
 }
 
@@ -409,17 +415,17 @@ form select:focus, input{
 }
 
 .items-title p:nth-child(2){
-    padding-left: 24rem;
+    padding-left: 20rem;
 }
 
 .items-title p:nth-child(4){
-    padding-right: 20rem;
+    padding-right: 25rem;
 }
 
 .row-container{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: end;
+    justify-content: space-evenly;
     padding-bottom: 3rem;
 }
 
@@ -452,7 +458,7 @@ main > .row-container .column-container{
     padding-right: 1rem;
 }
 
-main > .row-container .column-container > p{
+main > .row-container .column-container > h3{
     padding: .5rem;
     margin-bottom: 1rem;
     border-bottom: 2px solid var(--yellow);
@@ -485,6 +491,7 @@ aside > .column-container .itemhorizontal-text button{
 
 aside > .column-container .item-vertical button{
     float: none;
+    margin-left: 1rem;
 }
 
 
@@ -493,7 +500,7 @@ aside > .column-container .item-vertical button{
 --------------------------*/
 footer > .row-container:nth-child(1){
     background: var(--yellow);
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: var(--padd);
 }
