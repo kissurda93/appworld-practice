@@ -22,6 +22,8 @@ body{
     min-height: 100%;
     max-width: 100%;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 * a{
@@ -32,7 +34,7 @@ body{
     list-style-type: none;
 }
 
-* i{
+* i, * button{
     cursor: pointer;
 }
 
@@ -118,6 +120,7 @@ form{
     display: flex;
     align-items: center;
     margin-right: 12rem;
+    border-radius: .8rem;
 }
 
 form button{
@@ -133,6 +136,7 @@ form i{
 
 input{
     flex-basis: 80%;
+    border-radius: .8rem 0  0 .8rem;
 }
 
 input, form select{
@@ -291,7 +295,11 @@ form select:focus, input{
     padding: var(--padd);
 }
 
-.itemshead-container{
+.right-side{
+    max-width: 100%;
+}
+
+.column-container{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -301,7 +309,11 @@ form select:focus, input{
     display: flex;
     justify-content: center;
     gap: 1rem;
-    padding: 2rem 0 2rem 0;
+    padding: 2rem 0 1rem 0;
+}
+
+.column-container:nth-child(1) .items-title p:nth-child(2){
+    padding: 0;
 }
 
 .items-title p:nth-child(1){
@@ -313,7 +325,10 @@ form select:focus, input{
 .items{
     display: flex;
     justify-content: space-evenly;
-    flex-grow: 1;
+}
+
+.item-vertical{
+    padding-left: 1rem;
 }
 
 .item-vertical p:nth-child(1){
@@ -339,4 +354,200 @@ form select:focus, input{
     color: white;
     border: none;
     float: right;
+}
+
+.borderitems-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2.5rem 0 0 1rem;
+}
+
+.borderitems-container p{
+    flex-basis: 100%;
+}
+
+.borderitems-container .item-horizontal{
+    border: 2px solid var(--yellow);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin: .5rem;
+    flex-basis: 45%;
+}
+
+
+.rowbgi-container{
+    display: flex;
+    background: url(/img/1400X143/img1.png);
+    margin-top: 2rem;
+}
+
+.rowbgi-container p{
+    padding: 3rem .5rem 1.5rem 5rem;
+}
+
+.rowbgi-container span{
+    font-weight: bold;
+}
+
+.rowbgi-container p:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: small;
+    background: var(--yellow);
+    padding: .2rem 1rem .2rem 1rem;
+    margin: 2rem;
+}
+
+.rowbgi-container p:nth-child(2) span{
+    font-size: 1.5rem;
+}
+
+.rowbgi-container sup{
+    font-size: small;
+}
+
+.items-title p:nth-child(2){
+    padding-left: 24rem;
+}
+
+.items-title p:nth-child(4){
+    padding-right: 20rem;
+}
+
+.row-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: end;
+    padding-bottom: 3rem;
+}
+
+.row-container .item-horizontal{
+    flex-basis: 35%;
+}
+
+
+.right-side > .row-container{
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+
+.carousel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padd);
+    padding-bottom: 3rem;
+}
+
+
+main > .row-container{
+    padding: var(--padd);
+    padding-bottom: 3rem;
+}
+
+main > .row-container .column-container{
+    padding-right: 1rem;
+}
+
+main > .row-container .column-container > p{
+    padding: .5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--yellow);
+}
+
+main > .row-container .column-container .item-horizontal .itemhorizontal-text button{
+    margin-top: 0;
+}
+
+
+/* -------------------------
+    Oldalsáv-Aside
+--------------------------*/
+aside > .column-container{
+    padding-right: 1rem;
+}
+
+aside h3{
+    border-bottom: 2px solid var(--yellow);
+    padding-top: 15rem;
+}
+aside > .column-container .item-horizontal,
+aside > .column-container .item-vertical{
+    padding-top: 1rem;
+}
+
+aside > .column-container .itemhorizontal-text button{
+    margin-top: 0;
+}
+
+aside > .column-container .item-vertical button{
+    float: none;
+}
+
+
+/* -------------------------
+    Lábléc
+--------------------------*/
+footer > .row-container:nth-child(1){
+    background: var(--yellow);
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padd);
+}
+
+footer form{
+    margin: .3rem;
+}
+
+footer form button{
+    color: white;
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+footer input{
+    flex-basis: 85%;
+}
+
+footer > .row-container:nth-child(1) span{
+    font-weight: 900;
+}
+
+
+footer > .row-container:nth-child(2){
+    padding: var(--padd);
+}
+
+footer > .row-container:nth-child(2) .column-container{
+    padding: 2rem;
+}
+
+footer > .row-container:nth-child(2) p {
+    padding-bottom: .5rem;
+}
+
+footer > .row-container:nth-child(2) .column-container:nth-child(3) p:nth-child(1){
+    padding-top: 2.2rem;
+}
+
+footer > .row-container:nth-child(2) .column-container:nth-child(1) p:nth-child(1){
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--darkgrey);
+}
+
+footer > .row-container:nth-child(2) .column-container:nth-child(1) figure{
+    justify-content: left;
+}
+
+footer i{
+    padding: .5rem;
+    color: grey;
+}
+
+footer h3{
+    padding-bottom: 1rem;
 }
