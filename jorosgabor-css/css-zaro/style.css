@@ -214,7 +214,7 @@ form select:focus, input{
     min-height: 386px;
     display: flex;
     justify-content: space-between;
-    background: url(/img/1920X422/img1.jpg) no-repeat;
+    background: url(img/1920X422/img1.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -383,7 +383,7 @@ form select:focus, input{
 
 .rowbgi-container{
     display: flex;
-    background: url(/img/1400X143/img1.png);
+    background: url(img/1400X143/img1.png);
     margin-top: 2rem;
 }
 
