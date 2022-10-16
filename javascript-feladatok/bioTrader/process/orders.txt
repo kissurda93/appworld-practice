@@ -1,0 +1,8 @@
+
+        Name: Gábor
+        Email: jg@gmail.com
+        Address: Róna utca 56
+        City: Budapest
+        Zipcode: 1041
+        PhoneNumber: 06702144411
+        Order: Káposzta! 150kg

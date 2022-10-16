@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>To Do App</title>
+    </head>
+    <body onload="showLocalData()">
+        <div class="container">
+            <header>
+                <h1>Teendők listája</h1>
+                <button id="ujFeladat">
+                    <i class="fa-solid fa-plus"></i> Új feladat
+                </button>
+            </header>
+
+            <ul></ul>
+        </div>
+
+        <dialog id="new">
+            <h2>Új feladat</h2>
+            <form action="" method="dialog">
+                <label for="prioritas">Prioritás:</label>
+                <select name="prioritas" id="prioritas">
+                    <option value="Fontos">Fontos</option>
+                    <option value="Nem fontos">Nem fontos</option>
+                </select>
+
+                <label for="date">Dátum:</label>
+                <input type="datetime-local" name="date" id="date" />
+
+                <label for="leiras">Leírás:</label>
+                <textarea
+                    name="leiras"
+                    id="leiras"
+                    cols="30"
+                    rows="3"
+                ></textarea>
+
+                <div class="buttons-modal">
+                    <button class="mentes" id="mentes" type="submit">
+                        Mentés
+                    </button>
+                    <button class="bezar">Bezár</button>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog id="edit">
+            <h2><span></span>Teendő szerkesztése</h2>
+            <form action="" method="dialog">
+                <label for="prioritas">Prioritás:</label>
+                <select name="prioritas" id="editPrioritas">
+                    <option value="Fontos">Fontos</option>
+                    <option value="Nem fontos">Nem fontos</option>
+                </select>
+
+                <label for="date">Dátum:</label>
+                <input type="datetime-local" name="date" id="editDate" />
+
+                <label for="leiras">Leírás:</label>
+                <textarea
+                    name="leiras"
+                    id="editLeiras"
+                    cols="30"
+                    rows="3"
+                ></textarea>
+
+                <div class="buttons-modal">
+                    <button class="mentes" id="szerkeszt" type="submit">
+                        Mentés
+                    </button>
+                    <button class="bezar">Bezár</button>
+                </div>
+            </form>
+        </dialog>
+
+        <script src="scripts.js"></script>
+    </body>
+</html>

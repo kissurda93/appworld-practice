@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <script src="codemirror/codemirror-5.65.9/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="codemirror/codemirror-5.65.9/lib/codemirror.css">
+    <script src="codemirror/codemirror-5.65.9/mode/javascript/javascript.js"></script>
+    <link rel="stylesheet" href="codemirror/codemirror-5.65.9/theme/lucario.css">
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js"></script>
+</head>
+
+<body>
+    <article class="container fs-4">
+        <header class="row justify-content-center">
+            <h1 class="col-md-10 my-5 fs-1">
+                Haladó ismeretek 2 feladat bemutatása
+            </h1>
+        </header>
+        <div class="row justify-content-center">
+            <section class="col-md-10">
+                <p>
+                    Ebben a feladatban a <a href="https://jsonplaceholder.typicode.com">
+                    typicode.com</a> oldal három különböző
+                    endpointjairól kellett adatokat lekérnem, és azokat
+                    megjelenítenem. A feladat egyik fő elvárása az volt,
+                    hogy a lehető legkevesebb ajax lekérést generáljam.
+                    Ezért hát a scriptemet avval indítottam hogy mindhárom
+                    endpointra küldtem egy-egy kérést. Ehez a promise
+                    objektum all metódusát használtam:
+                </p>
+                <textarea name="" id="" cols="30" rows="10" readonly>
+Promise.all([
+    fetch('https://jsonplaceholder.typicode.com/posts'),
+    fetch('https://jsonplaceholder.typicode.com/comments'),
+    fetch('https://jsonplaceholder.typicode.com/users')
+])
+                </textarea>
+                <p>
+                    A <code>Promise.all</code> lehetővé teszi hogy egy
+                    eljárással több lekérést indítsunk majd a válaszokat
+                    feldolgozzuk. A metódus paraméterként egy tömböt vár aminek az elemei
+                    maguk a requestek. A feladatban a fetch api-t használtam
+                    a requestekhez. Ez után ahogy egy promise objektumnál
+                    szükséges <code>.then</code> ágakban dolgoztam fel a
+                    válaszokat
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+.then(async response => {
+    const array0 = await response[0].json()
+    const array1 = await response[1].json()
+    const array2 = await response[2].json()
+
+    return [array0, array1, array2]
+})
+.then(data => {
+    const posts = data[0];
+    const comments = data[1];
+    const users = data[2];
+                </textarea>
+                <p>
+                    Az fenti kódbol kapott "konstansok" (<code>posts, comments, users</code>) mostmár tartalmazzák a
+                    requestekből kapott
+                    információkat. Ez után a feladat leírása alapján először
+                    a posztokat dolgoztam fel és jelenítettem meg. Ezt egy
+                    <code>map</code> metódus segítségével tettem:
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+posts.map(element => {
+    ul.insertAdjacentHTML('beforeend',
+    `&ltli>
+        &ltp>&ltstrong>ID:&lt/strong> &ltspan>${element.id}&lt/span>&lt/p>
+        &ltp>&ltstrong>Post Title:&lt/strong> ${element.title}&lt/p>
+        &ltp>&ltstrong>User:&lt/strong> &ltspan>${getUserName(element.userId, users)}
+        &lt/span>&lt/p>
+    &lt/li>`)
+});
+                </textarea>
+                <p>
+                    A <code>map</code> egy ciklus szerű tömb metódus, aminek
+                    a visszatérési értéke egy új tömb. Végig haladva a tömb
+                    elemein mindegyik elemen valamilyen módosítást hajt
+                    végre majd azokat egy új tömbben adja vissza. Jelen
+                    esetbe a metódust megjelenítésre használtam ezért nem
+                    volt szükség rá hogy új tömböt kapjak vissza. A
+                    <code>map()</code> zárójelei közé paraméterként egy
+                    anonimus functiont vár, aminek paramétere a tömb elemeit
+                    szimbolizálja és function testében történő folyamatokkal
+                    pedig módosítani tudjuk ezeket a tömbelemeket. Tehát a
+                    fenti kódban a <code>posts</code> tömbön hívom meg a
+                    <code>map</code> metódust. A zárójeles részben az
+                    <code>element</code> szó szimbolizája a posts tömb
+                    elemeit amiken ciklus szerűen egyenként átiterál.
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+posts.map(element => {
+    ul.insertAdjacentHTML()
+    .......
+})
+                </textarea>
+                <p class="pt-5">
+                    A metódus testében vagyis a kapcsos zárójeles {...}
+                    részben az
+                    <code>insertAdjacentHTML()</code>
+                    metódust használom a megjelenítéshez, amit az
+                    <code>ul</code> (unordered list) elemen hívok meg. Ez a
+                    metódus egy string beillesztését teszi lehetővé a
+                    DOM-ban.
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+ul.insertAdjacentHTML('beforeend', `.....`)
+                </textarea>
+                <p>
+                    Első paraméter ként egy pozíciót vár, amik a következők
+                    lehetnek:
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+beforebegin &ltul> afterbegin........beforeend &lt/ul> afterend
+                </textarea>
+                <p>
+                    Tehát a pozicionálás ahoz a DOM elemhez képest történik
+                    amin meghívtuk. Ezen DOM elem nyitó és záró tagjei köré
+                    illeszthetjük be a második paraméternek string ként
+                    átadott információt.
+                </p>
+                <p>
+                    A második paraméter egy template literal string, ami
+                    lehtőve teszi hogy a string "sablonomba" dinamikus
+                    adatokat írjak a
+                    <code>${..}</code> kapcsos zárójelei közé. Ebben a
+                    stringben egy HTML kódrészletet írtam, ami bekerülve a
+                    DOM-ba új elemeket hoznak majd létre. Ebben a sablonba
+                    beillesztettem a <code>posts</code> tömböm elemeinek az
+                    adatait:
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+`&ltli>
+    &ltp>&ltstrong>ID:&lt/strong> &ltspan>${element.id}&lt/span>&lt/p>
+    &ltp>&ltstrong>Post Title:&lt/strong> ${element.title}&lt/p>
+    &ltp>&ltstrong>User:&lt/strong> &ltspan>${getUserName(element.userId, users)}
+    &lt/span>&lt/p>
+&lt/li>`
+                </textarea>
+                <p>
+                    A <code>${..}</code> zárójelek közé az
+                    <code>element</code> vagyis a tömb egyes elemeinek a
+                    tulajdonságai kerültek mint az <code>id</code> és
+                    <code>title</code>. Valamint a
+                    <code>getUserName()</code> függvényem.
+                </p>
+                <p class="pt-5">
+                    A <code>getUserName()</code> függvény egy toLoadIn.js
+                    nevű másik fájlban található amit a main.js fájlba
+                    vagyis a fő scriptbe importálok, a scriptem legelső
+                    sorában:
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+import {getUserName} from './toLoadIn.js'
+                </textarea>
+                <p>
+                    A javascript modulok lehetővé teszik hogy kódunkat külön
+                    fájlokra osszuk majd <code>export</code> -
+                    <code>import</code> parancsokkal beillesszük egy helyre
+                    őket ahol úgy viselkednek mintha egy fájlban lennének és
+                    ha megfelelően paraméterezzük őket akkor ezek a
+                    beillesztett kódrészletek újrahasználhatóak más
+                    projektekben is. Ahoz hogy használni tudjuk ezeket a
+                    parancsokat, a forrásfájlban a fő script hivatkozásásnak
+                    type attribútumát modulra kell állítani
+                    <code>type="module"</code>. Ez után a scriptet akár
+                    elhelyezhetjuk a head részben mert module módban csak a
+                    DOM után tölt be. Ügyeljünk mert module módban a
+                    javascript automatikusan strict módba áll! A moduloknak
+                    köszönhetően kódunk külön fájlokból állhat amik így
+                    átláthatóbbak és könnyebben értelmezhetőek mások és
+                    magunk számára!
+                </p>
+                <p>
+                    A fent látható kóddal importáltam be a
+                    <code>getUserName()</code> függvényem a main.js fájlba.
+                    Most nézzük meg toLoadIn.js fájlt hogy ott mi is van:
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+export function getUserName(id, array){
+    const user = array.find(elem => elem.id === id);
+    return user.name;
+}
+                </textarea>
+                <p>
+                    Mint láthatjuk definiálnunk kell a függvény elején hogy
+                    ez egy <code>export</code> függvény.
+                </p>
+                <p>
+                    Vegyük szemügyre most a
+                    <code>getUserName()</code> függvényt. Kettő paraméterre
+                    vár, az első egy <code>id</code> szám (ami jelen esetben
+                    az <code>element.userId</code> vagyis a posztnál
+                    feltüntetett usernek az ID-ja), a második egy
+                    <code>array</code> vagyis tömb (jelen esetben a
+                    <code>users</code> tömb ami tartalmazza a userek
+                    adatait). A <code>find()</code> tömb metódussal
+                    megkeresem a <code>users</code> tömbben azt a usert
+                    (users tömb egyik elemét) akinek az id tulajdonsága
+                    megyegyezik az <code>id</code> paraméterrel. Ha találat
+                    van akkor a metódus visszadja a talált usert (tömb
+                    elemet). Majd ezt az elemet a
+                    <code>user</code> változóban tárolom. Végül a függvény a
+                    <code>return</code> parancssal visszaadja a
+                    <code>user.name</code> értékét, vagyis a user nevét.
+                </p>
+                <p class="pt-5">
+                    Miután kiveséztük itt a dolgokat ideje visszatérnünk a
+                    main.js fájlba. Ott tartottunk hogy map-el kiirattuk a
+                    posztokat. Most az összes megjelnített elemre egyenként
+                    egy eseményfigyelőt kell helyezünk ami kattintásra
+                    megjeleníti a poszt és a user öszes adatát, illetve a
+                    poszthoz tartozó kommenteket.
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+listItems.forEach(elem => {
+    elem.addEventListener('click', (event) => {
+        .........
+        .......
+        event.target;
+        ........
+    })
+})
+                </textarea>
+                <p>
+                    A <code>listItems</code> változón (ami a korábban
+                    létrehozott elemeket tartalmazó tömb) meghívom a
+                    <code>forEach()</code> metódust, ami a tömb minden egyes
+                    eleméhez (<code>elem</code>) hozzáad egy
+                    <code>addEventListener()</code> esemény kezelő metódust.
+                    Az eseménykezelő első paraméterként egy esemény
+                    definiálást vár ami jelen esetben a "click" esemény,
+                    második ként pedig egy anonimus function-t. Az
+                    eseményfigyelő function zárójelei közötti
+                    <code>(event)</code> nem egy paraméter! Ebben a
+                    zárójelben tudjuk megfogni magát az eseményt. Ezáltal
+                    később az <code>event.target</code> segítségével
+                    hozzáférhetünk csakis ahoz az elemhez amin az esemény
+                    történik abban a pillanatban.
+                </p>
+                <p>
+                    Foglaljuk össze! Egy ciklus szerű metódusaal
+                    (<code>forEach()</code>) az összes megjelent posztunkra
+                    eseményfigyelőt állítunk be, ami a kattintás eseményt
+                    figyeli. Logikus hogy ez a kattintás egyszerre csak egy
+                    elemen történhet meg. Ezért van szükségünk arra az
+                    információra hogy épp melyik posztunkra kattintottunk
+                    <code>event.target</code>
+                </p>
+                <p>Nézzük még mi található ebben az eseménykezelőben:</p>
+                <textarea name="" id="" cols="30" rows="10">
+import('./toClickEvent.js')
+.then(utils => {
+    body.insertAdjacentHTML('afterbegin', 
+        `&ltdialog id="modal">
+            &ltdiv>${utils.getPostInfos(event.target, posts)}&lt/div>
+            &ltdiv>${utils.getUserInfos(event.target, users, posts)}&lt/div>
+            &ltdiv>${utils.getComments(event.target, comments)}&lt/div>
+            &ltform method="dialog">
+                &ltbutton class="exitbtn">Exit&lt/button>
+            &lt/form>
+        &lt/dialog>`)
+
+    const modal = document.querySelector('#modal');
+    modal.showModal();
+})
+                    </textarea>
+                <p class="pt-5">
+                    A hagyományos importok a kód első soraiban szoktak
+                    lenni. Ez itt egy dinamikus import. Mivel ő egy
+                    eseménykezelőben van ezért csak akkor valósul meg ha az esemény bekövetkezik.
+                    Tehát amikor kattintunk.
+                </p>
+                <p>
+                    Ez az import valójában egy
+                    <code>Promise</code> objektum. Így hát ugynúgy kell
+                    eljárnunk mint egy promise-al szokás és egy
+                    <code>.then</code> ágban kell el megfogni a tőle érkező
+                    választ.
+                </p>
+                <textarea name="" id="" cols="30" rows="10">
+import('./toClickEvent.js')
+.then(utils => {
+    ......
+    utils.getPostInfos();
+    utils.getUserInfos();
+    utils.getComments();
+    .......
+})
+                </textarea>
+                <p>
+                    Miután a <code>utils</code> változóval megfogtuk a
+                    választ, ezután rá hivatkozva tudjuk használni az
+                    érkezett függvényeket.
+                </p>
+                <p>
+                    Az érkezett függvények HTML "sablonokat" adnak
+                    visszatérési érték ként. Nem írnám le részletesen a
+                    toClickEvent.js fájl működését, mert akkor ez egy
+                    jelentősen hosszabb olvasmány lenne. &#128524
+                </p>
+                <p class="pt-5">
+                    Egy metódust említenék meg belőle amiről eddig nem volt
+                    szó, és az <code>filter()</code>. A
+                    <code>filter()</code> tömb metódus mint ahogy a neve is
+                    árulkodik róla szűrni fogja egy adott tömb elemeit
+                    bizonyos szempontok alapján. Itt egy példa a
+                    toClickEvent.js fájlból:
+                </p>
+
+                <textarea name="code" id="code" cols="30" rows="2">
+const postComments =  array.filter(elem => elem.postId == postId);
+                </textarea>
+
+                <p>Tehát <code>array</code> a tömbünk amin meghívjuk a filtert.
+                    Az <code>elem</code> pedig szimbolizája a tömb egyik elemét amit épp a filter vizsgál.
+                    Azt nézi meg hogy ennek az elemnek a <code>.postId</code>
+                    tulajdonságának az értéke megegyezik e egy másik postId nevű értékkel. Amely elemeknek egyezik ezen
+                    tulajdonsága,
+                    azokat visszatérési érték ként vissza adja egy új tömbben. Ezt a visszatérési tömböt pedig a
+                    postComments változóban tároljuk.
+                </p>
+                <p class="pt-5">
+                    Most térjünk vissza a main.js fájlba és nézzük meg mi van abban a <code>.then</code>
+                    ágban.
+                </p>
+                <textarea name="code" id="code" cols="0" rows="0">
+body.insertAdjacentHTML('afterbegin', 
+        `&ltdialog id="modal">
+            &ltdiv>${utils.getPostInfos(event.target, posts)}&lt/div>
+            &ltdiv>${utils.getUserInfos(event.target, users, posts)}&lt/div>
+            &ltdiv>${utils.getComments(event.target, comments)}&lt/div>
+            &ltform method="dialog">
+                &ltbutton class="exitbtn">Exit&lt/button>
+            &lt/form>
+        &lt/dialog>`)
+
+const modal = document.querySelector('#modal');
+modal.showModal();
+                </textarea>
+                <p>
+                    Itt sok újdonsággal nem találkozunk. Egy <code>insertAdjacentHTML()</code> segítségével beillesztünk
+                    a DOM-ba egy HTML <code>&ltdialog></code> elemet. Ami tartalmazza majd az összes feladatban kért
+                    információt merthogy dinamikusan az import függvények kattintásra visszadják ide értékeiket. Végül
+                    pedig a <code>showModal()</code> dialog metódussal megjelenítjük a <code>&ltdialog></code> elemet.
+                </p>
+                <p>
+                    Köszönöm ha végig olvasta! &#128524
+                </p>
+            </section>
+        </div>
+    </article>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

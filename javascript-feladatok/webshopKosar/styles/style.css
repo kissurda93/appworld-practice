@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+    color: whitesmoke;
+}
+
+body{
+    background: url('../img/pizza.jpg');
+    
+}
+
+h1{
+    font-weight: 800;
+}
+
+input{
+    border: none;
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button{
+    border: none;
+}
+
+#total{
+    padding: 0 .2rem 0 .5rem;
+}

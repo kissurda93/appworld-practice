@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"/>4
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <article class="container fs-4">
+            <section class="col-md-10 my-5">
+                <h1 class="text-center">Array, Map, Object és a Set adat típusok</h1>
+                <p>A címben szereplő adat típusokat összetett adat típusoknak hívjuk. Azért mert többféle adatot tartalmaznak, amiknek a típusai különböző lehet.</p>
+            </section>
+
+            <article class="mb-5">
+                <h2>Array</h2>
+                <p>Az Arrayket azaz tömböket kockás zárojelekel deklaráljuk.</p>
+                <code>
+                    <pre>
+                        const array = [
+                            'item1',
+                            'item2',
+                            true,
+                            45,
+                            45,
+                            {
+                                name: 'John Doe',
+                                age: 35
+                            },
+                            [25, 65, 87]
+                        ];
+                    </pre>
+                </code>
+                <p>
+                    Lista szerűen 0-tól indulva számozza a benne lévő elemek számát.
+                    A számozásról a javascript gondoskodik, nem kell nekünk külön definiálni őket!
+                    Afenti példában item1 a 0-ik indexű elem, item2 az 1-es, és item3 a 2-es és így tovább.
+                    A tömb tartalmazhat bármilyen adattípust, elemeit veszzővel kell elválasztani.
+                    Feldolgozhatók bármiylen ciklussal és több beépített metódus is lehetőségre áll ami a feldolgozást segíti.
+                    A következő sorokban bemutatnék párat.....
+                </p>
+                <code>
+                    <pre>
+                        for(i = 0; i < array.length; i++){
+                            console.log(array[i]);
+                        }
+                        array.forEach(element => console.log(element));
+                        const strings = array.filter(v => typeof v === 'string');
+                        const listitems = strings.map(v => `&ltli>${v}&lt/li>`);
+                        const ul = `&ltul>${listitems.join('')}&lt/ul>`;
+                    </pre>
+                </code>
+            </article>
+
+            <article class="mb-5">
+                <h2>Set</h2>
+                <p>A Set hasonlatos az Arrayhez, mind a ketten tömbszerű adat halmazok. A lényeges eltérés az hogy a Setben nem szerepelhet többször ugyanaz az adat míg egy tömbben igen.</p>
+                <p>
+                    A Settet a new Set() objektummal deklarálhatjuk
+                    Hiába próbálunk egy adatot többszörözni a Setten belül, ha kiíratjuk a Settet láthatjuk hogy az adat csak egyszer szerepel benne.
+                </p>
+                
+                <code>
+                    <pre>const set = new Set([1,2,2,3]);</pre>
+                </code>
+                
+                <p>
+                    A Set nem használ indexálást így hát nem lehet őt hagyományos ciklusokkal feldolgozni!
+                    Ehelyett beépített metódusai vannak amelyekből párat bemutatnék:
+                </p>
+                
+                <code>
+                    <pre>
+                        set.add(4);
+                        set.delete(4);
+                        set.forEach(val => console.log(val));
+                        set.clear();
+                    </pre>
+                </code>
+            </article>
+
+
+
+
+            <article class="mb-5">
+                <h2>Object</h2>
+                <p>Az objektum egy kulcs és érték párokból álló adattömb. Kapcsos zárójelekkel deklaráljuk, az elemek közé vesszőt és a párok közé kettős pontot teszünk:</p>
+                
+                <code>
+                    <pre>
+                        const obj = {
+                            firstName: 'John',
+                            secondName: 'Doe',
+                            age: 35,
+                            profession: 'cook'
+                        }
+                    </pre>
+                </code>
+                
+                <p>Az objektumokon sajnos nem annyira egyszerű át-iteráni mint a tömbökön mivel ők nem iterálhatók. Azonban a for-in ciklussal áttudunk iterálni az objektum kulcsain:</p>
+
+                <code>
+                    <pre>
+                        console.log(obj);
+                        for(x in obj){
+                            console.log(x);
+                        }
+                    </pre>
+                </code>
+                
+                <p>Az EcmaScript8-as frissítés óta lehetőségünk let az objektum kulcsait vagy értékeit vagy mindekettőt tömbökké alakítani. Így a létrehozott tömbökön használhatjuk a korábban említett tömb metódusokat vagy ciklusokat!</p>
+                
+                <code>
+                    <pre>
+                        const property = Object.keys(obj);
+                        const values = Object.values(obj);
+                        const entries = Object.entries(obj);
+
+                        entries.forEach(x => console.log(x));
+                    </pre>
+                </code>
+            </article>
+
+
+
+            <article class="mb-5">
+                <h2>Map</h2>
+                <p>A Map az egy objektumhoz hasonlatos adatstruktúra. Itt is kulcs érték párok szerepelnek. A kulcsok értéke bármyilyen adattípus lehet. A new Map() objektummal deklaráharjuk.</p>
+                
+                <code>
+                    <pre>
+                        const map = new Map([
+                            [1, 'Alice'],
+                            [2, 'Jonah'],
+                            [{firstName: 'John'}, 'Doe']
+                        ]);
+                    </pre>
+                </code>
+                
+                <p>A Map-en át-iterálhatunk a for-of ciklussal:</p>
+
+                <code>
+                    <pre>
+                        for(x of map){
+                            console.log(x);
+                        }
+                    </pre>
+                </code>
+                
+                <p>A forEach-el az értékein</p>
+
+                <code><pre>map.forEach(x => console.log(x))</pre></code>
+                
+                <p>Illetve használhatjuk beépített metódusait:</p>
+
+                <code>
+                    <pre>
+                        map.set();
+                        map.get();
+                        map.size;
+                        map.delete();
+                        map.clear();
+                        map.has();
+                    </pre>
+                </code>
+                
+            </article>
+        </article>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous">
+        </script>
+        <script src="array-object-map-set.js"></script>
+    </body>
+</html>
