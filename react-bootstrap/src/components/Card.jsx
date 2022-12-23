@@ -5,7 +5,7 @@ const Card = props => {
 		<Col
 			className={props.color === "dark" ? "bg-dark text-white p-4" : "p-4"}
 			lg={props.colsize ? props.colsize : ""}>
-			<h2>AI</h2>
+			<h2>{props.title}</h2>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
 				voluptatibus quaerat ad, odit, assumenda natus eligendi tenetur ea
