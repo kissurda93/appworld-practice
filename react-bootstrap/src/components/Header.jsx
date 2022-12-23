@@ -5,7 +5,9 @@ const Header = () => {
 		<Row
 			as='header'
 			className='flex-column flex-md-row bg-dark text-white pt-2'>
-			<Col as={"h4"}>Carbon Cloud Dashboard</Col>
+			<Col as={"h1"} className='h4'>
+				Carbon Cloud Dashboard
+			</Col>
 			<Col as={"form"} className='d-flex align-items-start'>
 				<Form.Control
 					placeholder='Search resources...'
