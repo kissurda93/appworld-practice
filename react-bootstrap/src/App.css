@@ -16,3 +16,12 @@
 	background-color: rgba(255, 255, 255, 0.05);
 	color: white;
 }
+
+i {
+	cursor: pointer;
+	transition: 150ms ease-in;
+}
+
+i:hover {
+	color: rgb(2, 117, 216);
+}
