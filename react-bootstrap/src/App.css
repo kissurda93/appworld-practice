@@ -17,11 +17,24 @@
 	color: white;
 }
 
-i {
-	cursor: pointer;
+a {
+	color: white;
 	transition: 150ms ease-in;
 }
 
-i:hover {
+nav a {
+	color: var(--bs-body);
+	padding: 0.5rem 0.5rem;
+}
+
+header a {
+	margin-right: 1rem;
+}
+
+a:focus {
+	outline: 2px solid rgb(2, 117, 216);
+}
+
+a:hover {
 	color: rgb(2, 117, 216);
 }

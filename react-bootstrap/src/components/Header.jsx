@@ -14,12 +14,20 @@ const Header = () => {
 				<Form.Control
 					placeholder='Search resources...'
 					className='custom-background border-0 border-bottom p-1 border-radius-0'></Form.Control>
-				<i className='bi bi-search h4 left-margin'></i>
+				<a href='/#' className='left-margin'>
+					<i className='bi bi-search h4'></i>
+				</a>
 			</Col>
 			<Col className='d-flex mt-2 mt-md-0 align-items-center justify-content-end h4'>
-				<i className='bi bi-pencil-fill me-3'></i>
-				<i className='bi bi-bell-fill me-3'></i>
-				<i className='bi bi-person-fill me-3'></i>
+				<a href='/#'>
+					<i className='bi bi-pencil-fill'></i>
+				</a>
+				<a href='/#'>
+					<i className='bi bi-bell-fill'></i>
+				</a>
+				<a href='/#'>
+					<i className='bi bi-person-fill'></i>
+				</a>
 			</Col>
 		</Row>
 	);

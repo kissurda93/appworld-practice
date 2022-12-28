@@ -5,14 +5,27 @@ const Navbar = () => {
 		<Col
 			as='nav'
 			className='d-flex flex-row flex-md-column h4 text-center col-1 w-auto'>
-			<i className='bi bi-list p-2'></i>
-			<i className='bi bi-house-fill p-2'></i>
-			<i className='bi bi-cloud-fill p-2'></i>
-			<i className='bi bi-database-fill p-2'></i>
-			<i className='bi bi-code-slash p-2'></i>
-			<i className='bi bi-people-fill p-2'></i>
-			<i className='bi bi-arrow-repeat p-2'></i>
-			<i className='bi bi-plus-lg p-2'></i>
+			<a href='/#'>
+				<i className='bi bi-list'></i>
+			</a>
+			<a href='/#'>
+				<i className='bi bi-house-fill'></i>
+			</a>
+			<a href='/#'>
+				<i className='bi bi-cloud-fill'></i>
+			</a>
+			<a href='/#'>
+				<i className='bi bi-database-fill'></i>
+			</a>
+			<a href='/#'>
+				<i className='bi bi-people-fill'></i>
+			</a>
+			<a href='/#'>
+				<i className='bi bi-arrow-repeat'></i>
+			</a>
+			<a href='/#'>
+				<i className='bi bi-plus-lg'></i>
+			</a>
 		</Col>
 	);
 };
