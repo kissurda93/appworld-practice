@@ -18,7 +18,7 @@
 }
 
 a {
-	color: white;
+	color: inherit;
 	transition: 150ms ease-in;
 }
 
@@ -31,10 +31,8 @@ header a {
 	margin-right: 1rem;
 }
 
+a:hover,
 a:focus {
-	outline: 2px solid rgb(2, 117, 216);
-}
-
-a:hover {
-	color: rgb(2, 117, 216);
+	color: rgb(var(--bs-primary-rgb));
+	outline: none;
 }
