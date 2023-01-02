@@ -1,6 +1,14 @@
 @import "bootstrap/dist/css/bootstrap.css";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+* {
+	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
+}
+
 .left-margin {
 	position: relative;
 	left: -30px;
@@ -22,7 +30,7 @@ a {
 	transition: 150ms ease-in;
 }
 
-nav a {
+nav > ul > li {
 	color: var(--bs-body);
 	padding: 0.5rem 0.5rem;
 }
@@ -31,8 +39,29 @@ header a {
 	margin-right: 1rem;
 }
 
-a:hover,
-a:focus {
+li:hover,
+li:focus {
 	color: rgb(var(--bs-primary-rgb));
 	outline: none;
+	cursor: pointer;
+}
+
+.header-tooltip > .tooltip-inner,
+.nav-tooltip > .tooltip-inner {
+	background-color: rgb(var(--bs-warning-rgb));
+	color: black;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.header-tooltip > .tooltip-arrow::before,
+.nav-tooltip > .tooltip-arrow::before {
+	border-bottom-color: rgb(var(--bs-warning-rgb));
+}
+
+@media (min-width: 768px) {
+	.nav-tooltip > .tooltip-arrow::before {
+		border-bottom-color: transparent;
+		border-right-color: var(--bs-yellow);
+	}
 }

@@ -33,36 +33,70 @@ const Header = () => {
 					}></Form.Control>
 				<OverlayTrigger
 					placement='bottom'
-					overlay={<Tooltip>Search...</Tooltip>}>
+					overlay={
+						<Tooltip className={contrastMode ? "header-tooltip" : ""}>
+							Search...
+						</Tooltip>
+					}>
 					<a href='/#' className='left-margin'>
 						<i className='bi bi-search h4'></i>
 					</a>
 				</OverlayTrigger>
 			</Col>
-			<Col className='d-flex mt-2 mt-md-0 align-items-center justify-content-end h4'>
+			<Col
+				as='ul'
+				className='d-flex mt-2 mt-md-0 align-items-center justify-content-end h4'>
 				<OverlayTrigger
 					placement='bottom'
-					overlay={<Tooltip>High Contrast Mode</Tooltip>}>
-					<a href='/#' onClick={changeTheme}>
-						<i className='bi bi-universal-access-circle'></i>
-					</a>
-				</OverlayTrigger>
-				<OverlayTrigger placement='bottom' overlay={<Tooltip>Edit</Tooltip>}>
-					<a href='/#'>
-						<i className='bi bi-pencil-fill'></i>
-					</a>
+					overlay={
+						<Tooltip className={contrastMode ? "header-tooltip" : ""}>
+							High Contrast Mode
+						</Tooltip>
+					}>
+					<li>
+						<a href='/#' onClick={changeTheme}>
+							<i className='bi bi-universal-access-circle'></i>
+						</a>
+					</li>
 				</OverlayTrigger>
 				<OverlayTrigger
 					placement='bottom'
-					overlay={<Tooltip>Notifications</Tooltip>}>
-					<a href='/#'>
-						<i className='bi bi-bell-fill'></i>
-					</a>
+					overlay={
+						<Tooltip className={contrastMode ? "header-tooltip" : ""}>
+							Edit
+						</Tooltip>
+					}>
+					<li>
+						<a href='/#'>
+							<i className='bi bi-pencil-fill'></i>
+						</a>
+					</li>
 				</OverlayTrigger>
-				<OverlayTrigger placement='bottom' overlay={<Tooltip>Profile</Tooltip>}>
-					<a href='/#'>
-						<i className='bi bi-person-fill'></i>
-					</a>
+				<OverlayTrigger
+					placement='bottom'
+					overlay={
+						<Tooltip className={contrastMode ? "header-tooltip" : ""}>
+							Notifications
+						</Tooltip>
+					}>
+					<li>
+						<a href='/#'>
+							<i className='bi bi-bell-fill'></i>
+						</a>
+					</li>
+				</OverlayTrigger>
+				<OverlayTrigger
+					placement='bottom'
+					overlay={
+						<Tooltip className={contrastMode ? "header-tooltip" : ""}>
+							Profile
+						</Tooltip>
+					}>
+					<li>
+						<a href='/#'>
+							<i className='bi bi-person-fill'></i>
+						</a>
+					</li>
 				</OverlayTrigger>
 			</Col>
 		</Row>
