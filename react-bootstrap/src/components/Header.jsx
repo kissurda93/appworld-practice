@@ -39,7 +39,7 @@ const Header = () => {
 						</Tooltip>
 					}>
 					<a href='/#' className='left-margin'>
-						<i className='bi bi-search h4'></i>
+						<i className='bi bi-search h4' role='img' aria-label='Search'></i>
 					</a>
 				</OverlayTrigger>
 			</Col>
@@ -55,7 +55,10 @@ const Header = () => {
 					}>
 					<li>
 						<a href='/#' onClick={changeTheme}>
-							<i className='bi bi-universal-access-circle'></i>
+							<i
+								className='bi bi-universal-access-circle'
+								role='img'
+								aria-label='High Contrast Mode'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -68,7 +71,7 @@ const Header = () => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-pencil-fill'></i>
+							<i className='bi bi-pencil-fill' role='img' aria-label='Edit'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -81,7 +84,10 @@ const Header = () => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-bell-fill'></i>
+							<i
+								className='bi bi-bell-fill'
+								role='img'
+								aria-label='Notifications'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -94,7 +100,10 @@ const Header = () => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-person-fill'></i>
+							<i
+								className='bi bi-person-fill'
+								role='img'
+								aria-label='Profile'></i>
 						</a>
 					</li>
 				</OverlayTrigger>

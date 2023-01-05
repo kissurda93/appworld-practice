@@ -39,8 +39,7 @@ header a {
 	margin-right: 1rem;
 }
 
-li:hover,
-li:focus {
+li:hover {
 	color: rgb(var(--bs-primary-rgb));
 	outline: none;
 	cursor: pointer;

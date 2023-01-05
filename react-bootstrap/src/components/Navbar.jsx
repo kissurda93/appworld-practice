@@ -30,7 +30,10 @@ const Navbar = ({ tooltipRight }) => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-house-fill'></i>
+							<i
+								className='bi bi-house-fill'
+								role='img'
+								aria-label='Home Page'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -43,7 +46,7 @@ const Navbar = ({ tooltipRight }) => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-cloud-fill'></i>
+							<i className='bi bi-cloud-fill' role='img' aria-label='Cloud'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -56,7 +59,10 @@ const Navbar = ({ tooltipRight }) => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-database-fill'></i>
+							<i
+								className='bi bi-database-fill'
+								role='img'
+								aria-label='Database'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -69,7 +75,10 @@ const Navbar = ({ tooltipRight }) => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-people-fill'></i>
+							<i
+								className='bi bi-people-fill'
+								role='img'
+								aria-label='Friends'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -82,7 +91,10 @@ const Navbar = ({ tooltipRight }) => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-arrow-repeat'></i>
+							<i
+								className='bi bi-arrow-repeat'
+								role='img'
+								aria-label='Update'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
@@ -93,7 +105,7 @@ const Navbar = ({ tooltipRight }) => {
 					}>
 					<li>
 						<a href='/#'>
-							<i className='bi bi-plus-lg'></i>
+							<i className='bi bi-plus-lg' role='img' aria-label='Add'></i>
 						</a>
 					</li>
 				</OverlayTrigger>
