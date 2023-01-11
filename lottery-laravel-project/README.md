@@ -4,7 +4,7 @@ Beginner Laravel exercise tasks:
 - Listing the numbers drawn for the "Five Lottery" until 17.12.2022 according to frequency of occurrence
 - Form for entering newly drawn numbers
 - Validating form date to do not overlap other weeks in the database
-- Validating the numbers(each number must be unique between 1 - 90)
+- Validating the numbers (each number must be unique between 1 - 90)
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 

@@ -18,11 +18,11 @@ class CreateLotteryTable extends Migration
             $table->integer('year');
             $table->integer('week');
             $table->date('date')->nullable();
-            $table->integer('nr1');
-            $table->integer('nr2');
-            $table->integer('nr3');
-            $table->integer('nr4');
-            $table->integer('nr5');
+            $table->integer('number_1');
+            $table->integer('number_2');
+            $table->integer('number_3');
+            $table->integer('number_4');
+            $table->integer('number_5');
             $table->timestamps();
         });
     }
