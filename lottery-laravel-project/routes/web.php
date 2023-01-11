@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', [LotteryController::class, 'getSortedLotteryNumbers'])->name('index');
+Route::get('/', [LotteryController::class, 'getSortedLotteryNumbers'])->name('index');
 
 Route::get('/add', function() {
   return view('addNumbers');
