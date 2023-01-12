@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreLotteryNumberRequest;
 use App\Models\Lottery;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
+
 
 class LotteryController extends Controller
 {
@@ -21,47 +20,12 @@ class LotteryController extends Controller
         return view('welcome', compact("countedResult"));
     }
     
-    public function store(Request $request) {
-        Validator::extend('customValidation', function($attribute, $value) {
-            $year = (new \DateTime($value))->format('Y');
-            $week = (new \DateTime($value))->format('W');
-            $result = Lottery::where('week', $week)->where('year', $year)->count() > 0;
+    public function store(StoreLotteryNumberRequest $request) {
+        $request = $request->validated();
+        $request['week'] = (new \DateTime($request['date']))->format('W');
+        $request['year'] = (new \DateTime($request['date']))->format('Y');
 
-            if ($result) {
-                return false;
-            }
-
-            return true;
-        }, 'There are already numbers drawn for this week');
-
-    
-        $validator = Validator::make($request->all(), [
-            'number_1' => 'required|numeric|min:1|max:90',
-            'number_2' => "required|numeric|".Rule::in(array_filter(range(1,90), function($item) {
-                return $item != request()->input('number_1');
-            })),
-            'number_3' => "required|numeric|".Rule::in(array_filter(range(1,90), function($item)use($request) {
-                return !in_Array($item, $request->only(['number_1', 'number_2']));
-            })),
-            'number_4' => 'required|numeric|'.Rule::in(array_filter(range(1,90), function($item)use($request) {
-                return !in_Array($item, $request->only(['number_1', 'number_2', 'number_3']));
-            })),
-            'number_5' => 'required|numeric|'.Rule::in(array_filter(range(1,90), function($item)use($request) {
-                return !in_Array($item, $request->only(['number_1', 'number_2', 'number_3', 'number_4']));
-            })),
-            'date' => "required|date|customValidation"
-        ]);
-
-        if($validator->fails()) 
-            return redirect('/add')->withErrors($validator)->withInput();
-        
-
-        $validated = $validator->validated();
-        $validated['week'] = (new \DateTime($validated['date']))->format('W');
-        $validated['year'] = (new \DateTime($validated['date']))->format('Y');
-
-
-        Lottery::create($validated);
+        Lottery::create($request);
         $okMessage = 'Numbers saved!';
         return view('addNumbers', compact('okMessage'));
     }

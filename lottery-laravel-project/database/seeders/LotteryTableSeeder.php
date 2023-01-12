@@ -1,26 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Database\Seeders;
 
 use App\Models\Lottery;
-use Illuminate\Http\Request;
+use Illuminate\Database\Seeder;
 
-class TxtProcessor extends Controller
+class LotteryTableSeeder extends Seeder
 {
-    public function processTxtFile() {
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
         set_time_limit(0);
 
-        function dateTransform($data) {
-            $data = str_replace('.', '-', trim($data, '.'));
-            if (preg_match('\d{4}-\d{2}-\d{2}', $data)) {
-                return $data;
-            }
-            else {
-                return "";
-            }
-        }
-
-        $data = file_get_contents(__DIR__ . '/../../../lotteryData.txt');
+        $data = file_get_contents(__DIR__ . '/../../lotteryData.txt');
         $rows = explode("\n", $data);
 
         foreach($rows as $row) {
@@ -46,7 +42,5 @@ class TxtProcessor extends Controller
                 'number_5' => $nr5,
             ]);
         }
-        
-        return redirect('/')->with('message', 'Database updated!');
     }
 }
