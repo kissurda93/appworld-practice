@@ -1,6 +1,6 @@
 Beginner Laravel exercise tasks:
 
-- Processing "lotteryData.txt" and saving data to database
+- Processing "lotteryData.txt" and saving data to database (LotteryTableSeeder class created, run "php artisan db:seed" command on the CLI to execute)
 - Listing the numbers drawn for the "Five Lottery" until 17.12.2022 according to frequency of occurrence
 - Form for entering newly drawn numbers
 - Validating form date to do not overlap other weeks in the database
